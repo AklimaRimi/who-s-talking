@@ -39,12 +39,21 @@ The famous motivational speakers I chose are: Oprah Winfrey, Eric Thomas, Les Br
 ## Audio to numeric conversion
   ### Libraries: liborsa
 
-  A training model can not be trained using an audio file and  computers understand the numeric value. For this conversion, I used librosa library. To do that I have to follow several things:
+  A training model can not be trained using an audio file and  computers understand the numeric value. For this conversion, I used the librosa library. To do that, I have to follow several things:
 
-    1. I set the Sample_rate = 8000 because my audio sizes are 5 seconds.
-    2. 
-    3. 
-    4. 
+
+mel_spec = librosa.feature.melspectrogram(y=audio, sr=sr, n_fft=fft_length, hop_length=hop_length, n_mels=num_mel_bins)
+    
+  1. I set the Sample_rate = 8000 because my audio sizes are 5 seconds.
+  2. I used MelSpecttogram and amplitude_db to calculate pitch and decibel as numeric values of speech.
+     
+    
+    The spectrogram is a Short-time Fourier Transform used for non-periodic data. We know speech, and music can change over time.
+      We as human beings, can not differentiate 20000Hz and 22000Hz frequencies, frequencies sound. What Mel scale does, convert audio like listener listens to a speaker from a specific distance, and makes a range for frequencies.
+
+      So a Mel Spectrogram is a spectrogram where the frequencies are converted to the male scale.
+
+
     
   
 
