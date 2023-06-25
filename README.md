@@ -49,17 +49,20 @@ mel_spec = librosa.feature.melspectrogram(y=audio, sr=sr, n_fft=fft_length, hop_
      
     
     The spectrogram is a Short-time Fourier Transform used for non-periodic data. We know speech, and music can change over time.
-      We as human beings, can not differentiate 20000Hz and 22000Hz frequencies, frequencies sound. What Mel scale does, convert audio like listener listens to a speaker from a specific distance, and makes a range for frequencies.
+    We as human beings, can not differentiate 20000Hz and 22000Hz frequencies, frequencies sound. What Mel scale does, convert audio like listener listens to a speaker from a specific distance, and makes a range for frequencies.
 
-      So a Mel Spectrogram is a spectrogram where the frequencies are converted to the male scale.
+    So a Mel Spectrogram is a spectrogram where the frequencies are converted to the male scale.
 
+# Model Train
+  I used the Simple Tensorflow `VGG16` sequential model for this project. I used the audio as a 2d Image and Conv2d will extract the features from the audio by itself. As the dataset is non-periodic It is hard to extract features manually.
 
-    
+  The best result is:
+ ### *Accuracy : 92%,  Sparse_categorical_accuracy: 92%,  Val_accuracy:  82%*
   
 
 
 # Model Architecture
 
-# Model Size Compression
+![download](https://github.com/AklimaRimi/who-s-talking/assets/59701116/00abb668-8523-4439-a8b0-b83aaac310e7)
 
-# Achievement
+
